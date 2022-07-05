@@ -13,5 +13,7 @@
       <MovieFilter />
     </div>
   </div>
-  <div></div>
+  <div class="container my-8 flex flex-wrap items-center justify-center gap-8">
+    <MovieCard />
+  </div>
 </template>
