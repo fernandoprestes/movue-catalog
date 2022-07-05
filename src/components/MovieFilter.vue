@@ -1,103 +1,126 @@
 <script lang="ts" setup>
-  const filterOptionsSelect = [
+  interface Tags {
+    id: string;
+    label: string;
+  }
+  const tagsSelected = ref<string[]>([]);
+
+  const filterOptionsSelect: Array<Tags> = [
     {
-      name: 'action',
-      label: 'ação',
+      id: '28',
+      label: 'Ação',
     },
     {
-      name: 'action',
+      id: '12',
       label: 'Aventura',
     },
     {
-      name: 'action',
+      id: '16',
       label: 'Animação',
     },
     {
-      name: 'action',
+      id: '35',
       label: 'Comédia',
     },
     {
-      name: 'action',
+      id: '80',
       label: 'Crime',
     },
     {
-      name: 'action',
+      id: '99',
       label: 'Documentário',
     },
     {
-      name: 'action',
+      id: '18',
       label: 'Drama',
     },
     {
-      name: 'action',
+      id: '10751',
       label: 'Família',
     },
     {
-      name: 'action',
+      id: '14',
       label: 'Fantasia',
     },
     {
-      name: 'action',
+      id: '36',
       label: 'História',
     },
     {
-      name: 'action',
+      id: '27',
       label: 'Terror',
     },
     {
-      name: 'action',
+      id: '10402',
       label: 'Música',
     },
     {
-      name: 'action',
+      id: '9648',
       label: 'Mistério',
     },
     {
-      name: 'action',
+      id: '10749',
       label: 'Romance',
     },
     {
-      name: 'action',
+      id: '878',
       label: 'Ficção cientifica',
     },
     {
-      name: 'action',
+      id: '10770',
       label: 'Cinema TV',
     },
     {
-      name: 'action',
+      id: '53',
       label: 'Thriller',
     },
     {
-      name: 'action',
+      id: '10752',
       label: 'Guerra',
     },
     {
-      name: 'action',
+      id: '37',
       label: 'Faroeste',
     },
   ];
+
+  const removeSelectedItem = (idd: string) => {
+    tagsSelected.value = tagsSelected.value.filter(item => item !== idd);
+  };
 </script>
 <template>
   <div>
     <p class="mt-10 mb-4 text-sm font-bold uppercase text-white">Filtre por:</p>
     <div class="flex w-full flex-wrap gap-3 lg:justify-center">
       <div
-        v-for="(item, index) in filterOptionsSelect"
-        :key="index"
-        class="w-fit cursor-pointer rounded bg-white px-4 py-2"
+        v-for="item in filterOptionsSelect"
+        :key="item.id"
+        class="relative mb-2 flex items-center justify-between rounded bg-white"
+        :class="{ 'bg-[#D18000] text-white': tagsSelected.includes(item.id) }"
       >
-        <label
-          :for="item.name"
-          class="cursor-pointer select-none font-bold capitalize"
-          >{{ item.label }}</label
+        <div class="flex w-full items-center justify-center">
+          <input
+            :id="item.id"
+            v-model="tagsSelected"
+            :value="item.id"
+            :name="item.id"
+            type="checkbox"
+            class="sr-only"
+          />
+          <label
+            :for="item.id"
+            class="inline-block w-full cursor-pointer px-4 py-2"
+            :class="{ 'pointer-events-none': tagsSelected.includes(item.id) }"
+            >{{ item.label }}</label
+          >
+        </div>
+        <span
+          v-if="tagsSelected.includes(item.id)"
+          class="-translate-x-2 cursor-pointer rounded-full bg-white text-[#d18000]"
+          @click="removeSelectedItem(item.id)"
         >
-        <input
-          :id="item.name"
-          type="radio"
-          :name="item.name"
-          class="sr-only"
-        />
+          <IconClose />
+        </span>
       </div>
     </div>
   </div>
