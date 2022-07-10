@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   const store = useMoviesStore();
 
-  const { movies } = storeToRefs(store);
+  const { moviesListResults } = storeToRefs(store);
 
   function formatterDate(date: string) {
     const [year, month, day] = date.split('-');
@@ -14,7 +14,7 @@
 </script>
 <template>
   <div
-    v-for="item in movies.results"
+    v-for="item in moviesListResults"
     :key="item.id"
     class="flex w-[220px] flex-col justify-between overflow-hidden rounded shadow-md"
   >

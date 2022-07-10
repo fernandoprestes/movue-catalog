@@ -16,7 +16,10 @@ export const useMoviesStore = defineStore('useMovies', {
   },
 
   getters: {
-    movies: state => state.moviesList,
+    moviesListPage: state => state.moviesList.page,
+    moviesListResults: state => state.moviesList.results,
+    moviesListTotalPage: state => state.moviesList.total_pages,
+    moviesLisTotalResults: state => state.moviesList.total_results,
   },
 
   actions: {
