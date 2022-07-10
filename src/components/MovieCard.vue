@@ -1,6 +1,6 @@
 <script lang="ts" setup></script>
 <template>
-  <div class="w-48 overflow-hidden rounded shadow-md">
+  <div class="h-[330px] w-[220px] overflow-hidden rounded shadow-md">
     <img
       src="https://www.themoviedb.org/t/p/w220_and_h330_face/boIgXXUhw5O3oVkhXsE6SJZkmYo.jpg"
       alt=""
