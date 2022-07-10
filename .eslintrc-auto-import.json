@@ -1,8 +1,10 @@
 {
   "globals": {
+    "Api": true,
     "EffectScope": true,
     "asyncComputed": true,
     "autoResetRef": true,
+    "axios": true,
     "computed": true,
     "computedAsync": true,
     "computedEager": true,

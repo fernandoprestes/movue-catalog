@@ -17,9 +17,20 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
+      imports: [
+        'vue',
+        'vue-router',
+        '@vueuse/head',
+        '@vueuse/core',
+        {
+          axios: [
+            // default imports
+            ['default', 'axios'], // import { default as axios } from 'axios',
+          ],
+        },
+      ],
       dts: 'src/auto-imports.d.ts',
-      dirs: ['src/composables', 'src/store'],
+      dirs: ['src/composables', 'src/services'],
       vueTemplate: true,
       eslintrc: {
         enabled: true,
