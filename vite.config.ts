@@ -22,6 +22,7 @@ export default defineConfig({
         'vue-router',
         '@vueuse/head',
         '@vueuse/core',
+        'pinia',
         {
           axios: [
             // default imports
@@ -30,7 +31,7 @@ export default defineConfig({
         },
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: ['src/composables', 'src/services'],
+      dirs: ['src/composables/', 'src/services'],
       vueTemplate: true,
       eslintrc: {
         enabled: true,
