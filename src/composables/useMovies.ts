@@ -1,9 +1,9 @@
 const { fetchAllPopularMovies } = useFetchMovies();
-import { IMoviesResults } from '~/type/IMoviesResults';
+import { MoviesResults as MoviesResultsTypes } from '~/types/MoviesResults';
 
-interface MoviesProps {
+interface MoviesStoreProps {
   page: number;
-  results: Array<IMoviesResults>;
+  results: Array<MoviesResultsTypes>;
   total_pages: number;
   total_results: number;
 }
@@ -11,7 +11,7 @@ interface MoviesProps {
 export const useMoviesStore = defineStore('useMovies', {
   state: () => {
     return {
-      moviesList: {} as MoviesProps,
+      moviesList: {} as MoviesStoreProps,
     };
   },
 

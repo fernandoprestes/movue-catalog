@@ -1,4 +1,4 @@
-export type IMoviesResults = {
+export type MoviesResults = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
