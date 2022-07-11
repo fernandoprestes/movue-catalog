@@ -13,7 +13,7 @@
   });
 </script>
 <template>
-  <div
+  <li
     v-for="item in moviesListResults"
     :key="item.id"
     class="flex w-[220px] flex-col justify-between overflow-hidden rounded shadow-md"
@@ -22,12 +22,12 @@
       <img
         class="h-[330px]"
         :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`"
-        :alt="`${item.title}`"
+        :alt="`Poster do filme ${item.title}`"
       />
 
       <h2 class="px-1 font-bold">{{ item.title }}</h2>
     </div>
-    <p class="px-1 text-sm text-[#646464]">{{ formatterDate(item.release_date) }}</p>
-  </div>
+    <p class="px-1 py-2 text-sm text-[#646464]">{{ formatterDate(item.release_date) }}</p>
+  </li>
 </template>
 <style scoped lang=""></style>
