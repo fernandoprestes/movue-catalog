@@ -8,7 +8,7 @@ interface MoviesStoreProps {
   total_results: number;
 }
 
-export const useMoviesStore = defineStore('useMovies', {
+export const useMoviesStore = defineStore('useMoviesList', {
   state: () => {
     return {
       moviesList: {} as MoviesStoreProps,

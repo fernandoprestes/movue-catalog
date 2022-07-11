@@ -19,11 +19,13 @@
     class="flex w-[220px] flex-col justify-between overflow-hidden rounded shadow-md"
   >
     <div class="mb-2">
-      <img
-        class="h-[330px]"
-        :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`"
-        :alt="`Poster do filme ${item.title}`"
-      />
+      <router-link :to="{ name: 'MoviesDetails', params: { id: item.id } }">
+        <img
+          class="h-[330px]"
+          :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`"
+          :alt="`Poster do filme ${item.title}`"
+        />
+      </router-link>
 
       <h2 class="px-1 font-bold">{{ item.title }}</h2>
     </div>

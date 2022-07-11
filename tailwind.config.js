@@ -5,7 +5,11 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        hero: 'linear-gradient(to bottom, #2d0c5e 90%, #fff 10%)',
+      },
+    },
   },
   plugins: [],
 };

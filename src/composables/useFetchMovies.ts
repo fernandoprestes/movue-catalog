@@ -7,6 +7,14 @@ export default function useFetchMovies() {
       return error;
     }
   };
+  const fetchDetailsMovie = async (id: number) => {
+    try {
+      const response = await Api.getMovieDetails(id);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
 
-  return { fetchAllPopularMovies };
+  return { fetchAllPopularMovies, fetchDetailsMovie };
 }

@@ -14,4 +14,10 @@ export class Api {
     );
     return response.data;
   }
+
+  static async getMovieDetails(movie_id: number) {
+    // query = &with_genres=18&with_genres=14
+    const response = await axios.get(`${API_URL}/${movie_id}?api_key=${API_KEY}&language=pt-BR`);
+    return response.data;
+  }
 }
