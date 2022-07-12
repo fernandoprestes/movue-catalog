@@ -23,8 +23,8 @@ export const useMoviesStore = defineStore('useMoviesList', {
   },
 
   actions: {
-    async getMovies() {
-      const data = await fetchAllPopularMovies();
+    async getMovies(page = 1) {
+      const data = await fetchAllPopularMovies(page);
       this.moviesList = data;
     },
   },

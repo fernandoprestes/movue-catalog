@@ -1,7 +1,7 @@
 export default function useFetchMovies() {
-  const fetchAllPopularMovies = async () => {
+  const fetchAllPopularMovies = async (id: number) => {
     try {
-      const response = await Api.getAllPopularMovies();
+      const response = await Api.getAllPopularMovies(id);
       return response;
     } catch (error) {
       return error;
