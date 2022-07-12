@@ -25,6 +25,14 @@
     }
     return genresConcat.replace(/,\s*$/, '');
   }
+
+  function minutosToHours(runtime?: number) {
+    if (!runtime) return;
+    const hours = Math.floor(runtime / 60);
+    const minutes = runtime % 60;
+    return `${hours}h${minutes}min`;
+  }
+
   onMounted(async () => {
     movie.value = await fetchDetailsMovie(props.id);
   });
@@ -42,7 +50,8 @@
         <div>
           <h2 class="text-3xl font-bold">{{ movie?.title }}</h2>
           <p class="text-lg">
-            {{ formatterDate(movie?.release_date) }} (BR) • {{ genres(movie?.genres) }} • {{ movie?.runtime }}
+            {{ formatterDate(movie?.release_date) }} (BR) • {{ genres(movie?.genres) }} •
+            {{ minutosToHours(movie?.runtime) }}
           </p>
         </div>
         <div></div>
