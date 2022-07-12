@@ -183,7 +183,6 @@ declare global {
   const useMouse: typeof import('@vueuse/core')['useMouse']
   const useMouseInElement: typeof import('@vueuse/core')['useMouseInElement']
   const useMousePressed: typeof import('@vueuse/core')['useMousePressed']
-  const useMovieDetailsStore: typeof import('./composables/useMovieDetails')['useMovieDetailsStore']
   const useMoviesStore: typeof import('./composables/useMoviesList')['useMoviesStore']
   const useMutationObserver: typeof import('@vueuse/core')['useMutationObserver']
   const useNavigatorLanguage: typeof import('@vueuse/core')['useNavigatorLanguage']
@@ -444,7 +443,6 @@ declare module '@vue/runtime-core' {
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
     readonly useMouseInElement: UnwrapRef<typeof import('@vueuse/core')['useMouseInElement']>
     readonly useMousePressed: UnwrapRef<typeof import('@vueuse/core')['useMousePressed']>
-    readonly useMovieDetailsStore: UnwrapRef<typeof import('./composables/useMovieDetails')['useMovieDetailsStore']>
     readonly useMoviesStore: UnwrapRef<typeof import('./composables/useMoviesList')['useMoviesStore']>
     readonly useMutationObserver: UnwrapRef<typeof import('@vueuse/core')['useMutationObserver']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('@vueuse/core')['useNavigatorLanguage']>
