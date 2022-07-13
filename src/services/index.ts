@@ -20,4 +20,9 @@ export class Api {
     const response = await axios.get(`${API_URL}/${movie_id}?api_key=${API_KEY}&language=pt-BR`);
     return response.data;
   }
+
+  static async getMovieCast(movie_id: number) {
+    const response = await axios.get(`${API_URL}/${movie_id}/credits?api_key=${API_KEY}&language=pt-BR`);
+    return response.data;
+  }
 }
