@@ -9,7 +9,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
     "sourceMap": true,
     "baseUrl": ".",
     "lib": ["DOM", "ESNext"],
