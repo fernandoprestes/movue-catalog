@@ -1,7 +1,8 @@
 {
-  "name": "boilerplate-vue3",
+  "name": "movue-catalog",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "fernandoprestes",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
