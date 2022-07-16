@@ -3,6 +3,8 @@
     id: string;
     label: string;
   }
+
+  const store = useMoviesStore();
   const tagsSelected = ref<string[]>([]);
 
   const filterOptionsSelect: Array<Tags> = [
@@ -87,10 +89,22 @@
   const removeSelectedItem = (idd: string) => {
     tagsSelected.value = tagsSelected.value.filter(item => item !== idd);
   };
+
+  watchArray(tagsSelected, async (newList: string[]) => {
+    if (!newList.length) {
+      await store.getMovies();
+      return;
+    }
+    let query = '';
+    newList.forEach(async element => {
+      query += `&with_genres=${element}`;
+      await store.getMoviesWith(query);
+    });
+  });
 </script>
 <template>
   <div>
-    <p class="mt-10 mb-4 text-sm font-bold uppercase text-white">Filtre por:</p>
+    <p class="my-6 text-sm font-bold uppercase text-white md:mt-10">Filtre por:</p>
     <div class="flex w-full flex-wrap gap-3 lg:justify-center">
       <div
         v-for="item in filterOptionsSelect"
@@ -109,14 +123,14 @@
           />
           <label
             :for="item.id"
-            class="inline-block w-full cursor-pointer px-4 py-2"
+            class="inline-block w-full cursor-pointer p-1 text-sm md:py-2 md:px-4 md:text-base"
             :class="{ 'pointer-events-none': tagsSelected.includes(item.id) }"
             >{{ item.label }}</label
           >
         </div>
         <span
           v-if="tagsSelected.includes(item.id)"
-          class="-translate-x-2 cursor-pointer rounded-full bg-white text-[#d18000]"
+          class="-translate-x-0 cursor-pointer rounded-full bg-white text-[#d18000] md:-translate-x-2"
           @click="removeSelectedItem(item.id)"
         >
           <IconClose />

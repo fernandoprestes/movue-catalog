@@ -1,4 +1,4 @@
-const { fetchAllPopularMovies } = useFetchMovies();
+const { fetchAllPopularMovies, fetchPopularMoviesByQuery } = useFetchMovies();
 import { MoviesResults as MoviesResultsTypes } from '~/types/MoviesResults';
 
 interface MoviesStoreProps {
@@ -25,6 +25,11 @@ export const useMoviesStore = defineStore('useMoviesList', {
   actions: {
     async getMovies(page = 1) {
       const data = await fetchAllPopularMovies(page);
+      this.moviesList = data;
+    },
+
+    async getMoviesWith(query: string) {
+      const data = await fetchPopularMoviesByQuery(query);
       this.moviesList = data;
     },
   },

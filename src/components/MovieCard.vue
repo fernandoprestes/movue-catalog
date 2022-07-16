@@ -13,23 +13,24 @@
   });
 </script>
 <template>
-  <li
-    v-for="item in moviesListResults"
-    :key="item.id"
-    class="flex w-[220px] flex-col justify-between overflow-hidden rounded shadow-md"
-  >
-    <div class="mb-2">
-      <router-link :to="{ name: 'MoviesDetails', params: { id: item.id } }">
-        <img
-          class="h-[330px]"
-          :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`"
-          :alt="`Poster do filme ${item.title}`"
-        />
-      </router-link>
+  <ul class="container my-8 flex max-w-7xl flex-wrap items-stretch justify-center gap-8">
+    <li
+      v-for="item in moviesListResults"
+      :key="item.id"
+      class="flex w-[220px] flex-col justify-between overflow-hidden rounded shadow-md"
+    >
+      <div class="mb-2">
+        <router-link :to="{ name: 'MoviesDetails', params: { id: item.id } }">
+          <img
+            class="h-[330px]"
+            :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`"
+            :alt="`Poster do filme ${item.title}`"
+          />
+        </router-link>
 
-      <h2 class="px-1 font-bold">{{ item.title }}</h2>
-    </div>
-    <p class="px-1 py-2 text-sm text-[#646464]">{{ formatterDate(item.release_date) }}</p>
-  </li>
+        <h2 class="px-1 font-bold">{{ item.title }}</h2>
+      </div>
+      <p class="px-1 py-2 text-sm text-[#646464]">{{ formatterDate(item.release_date) }}</p>
+    </li>
+  </ul>
 </template>
-<style scoped lang=""></style>

@@ -8,6 +8,15 @@ export default function useFetchMovies() {
     }
   };
 
+  const fetchPopularMoviesByQuery = async (query: string) => {
+    try {
+      const response = await Api.getMoviesWithGenres(query);
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
+
   const fetchDetailsMovie = async (id: number) => {
     try {
       const response = await Api.getMovieDetails(id);
@@ -26,5 +35,5 @@ export default function useFetchMovies() {
     }
   };
 
-  return { fetchAllPopularMovies, fetchDetailsMovie, fetchMovieCast };
+  return { fetchAllPopularMovies, fetchDetailsMovie, fetchMovieCast, fetchPopularMoviesByQuery };
 }
