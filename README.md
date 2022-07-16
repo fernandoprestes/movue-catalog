@@ -47,7 +47,6 @@ Usando a API de filmes gratuita [TheMovieDB](https://developers.themoviedb.org/3
 - [Axios](https://axios-http.com/)
 - [Pinia](https://pinia.vuejs.org/)
 - [VueUse](https://vueuse.org/)
-
 - [TMDBApi](https://developers.themoviedb.org/3)
 
 ### Ferramentas e extensões recomendadas
