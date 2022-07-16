@@ -8,7 +8,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     IconClose: typeof import('./components/IconClose.vue')['default']
+    IconImageNotSupported: typeof import('./components/IconImageNotSupported.vue')['default']
     IconLogo: typeof import('./components/IconLogo.vue')['default']
+    IconPerson: typeof import('./components/IconPerson.vue')['default']
     MovieCard: typeof import('./components/MovieCard.vue')['default']
     MovieFilter: typeof import('./components/MovieFilter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import imgNotFound from '~/assets/img/notFoundImg.png';
   import { Genres, MovieDetails } from '~/types/MovieDetails';
   import { MovieCasting } from '~/types/MovieCasting';
 
@@ -99,10 +98,7 @@
               v-else
               class="flex h-[264px] items-center justify-center rounded bg-[#dbdbdb]"
             >
-              <img
-                :src="imgNotFound"
-                alt="Foto não encontrada"
-              />
+              <IconPerson />
             </div>
             <div class="py-2">
               <p>{{ caster.name }}</p>
